@@ -1,0 +1,30 @@
+spring:
+  web:
+    resources:
+      add-mappings: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/petswap
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  hikari:
+    maximum-pool-size: 10
+    minimum-idle: 2
+    idle-timeout: 30000
+    max-lifetime: 1800000
+    connection-timeout: 30000
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+app:
+  secret-key: 279ba02e517455f89696fd05df867a86020a545297d2ea1f3666643c065e43bd89f49930541d34a53a65bd85daf41b473cc272a4b96560f4cd1d3f0c86b7bb73
+  expiration-time: 900000
