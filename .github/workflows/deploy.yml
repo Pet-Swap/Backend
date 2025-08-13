@@ -31,4 +31,3 @@ jobs:
     - name: Deploy to staging
       run: |
         echo "Déploiement vers l'environnement de staging"
-

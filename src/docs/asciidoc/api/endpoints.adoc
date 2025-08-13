@@ -1,0 +1,266 @@
+=== Endpoints API
+
+==== Authentification
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|POST
+|`/api/auth/login`
+|Connexion utilisateur avec JWT
+
+|POST
+|`/api/auth/register`
+|Inscription d'un nouvel utilisateur
+
+|POST
+|`/api/auth/refresh`
+|Renouvellement du token JWT
+|===
+
+==== Gestion des profils
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/profiles/me`
+|Récupération du profil utilisateur connecté
+
+|PUT
+|`/api/profiles/me`
+|Modification du profil utilisateur
+
+|GET
+|`/api/profiles/{id}`
+|Récupération d'un profil par ID
+
+|POST
+|`/api/profiles/upload-avatar`
+|Upload d'un avatar utilisateur
+|===
+
+==== Gestion des animaux
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/pets`
+|Liste des animaux de l'utilisateur connecté
+
+|POST
+|`/api/pets`
+|Création d'un nouvel animal
+
+|GET
+|`/api/pets/{id}`
+|Récupération d'un animal par ID
+
+|PUT
+|`/api/pets/{id}`
+|Modification d'un animal
+
+|DELETE
+|`/api/pets/{id}`
+|Suppression d'un animal
+|===
+
+==== Système de swipe et matching
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|POST
+|`/api/swipes`
+|Effectuer un swipe (like/dislike)
+
+|GET
+|`/api/swipes/potential-matches`
+|Récupération des profils à swiper
+
+|GET
+|`/api/matches`
+|Liste des matches de l'utilisateur
+|===
+
+==== Gestion des annonces
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/listings`
+|Liste des annonces disponibles
+
+|POST
+|`/api/listings`
+|Création d'une nouvelle annonce
+
+|GET
+|`/api/listings/{id}`
+|Récupération d'une annonce par ID
+
+|PUT
+|`/api/listings/{id}`
+|Modification d'une annonce
+
+|DELETE
+|`/api/listings/{id}`
+|Suppression d'une annonce
+|===
+
+==== Réservations
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/bookings`
+|Liste des réservations de l'utilisateur
+
+|POST
+|`/api/bookings`
+|Création d'une nouvelle réservation
+
+|GET
+|`/api/bookings/{id}`
+|Récupération d'une réservation par ID
+
+|PUT
+|`/api/bookings/{id}/status`
+|Modification du statut d'une réservation
+
+|DELETE
+|`/api/bookings/{id}`
+|Annulation d'une réservation
+|===
+
+==== Messagerie
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/messages/{matchId}`
+|Récupération des messages d'un match
+
+|POST
+|`/api/messages`
+|Envoi d'un nouveau message
+
+|PUT
+|`/api/messages/{id}/read`
+|Marquer un message comme lu
+|===
+
+==== Évaluations
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/reviews/profile/{profileId}`
+|Récupération des avis d'un profil
+
+|POST
+|`/api/reviews`
+|Création d'un nouvel avis
+
+|GET
+|`/api/reviews/{id}`
+|Récupération d'un avis par ID
+
+|PUT
+|`/api/reviews/{id}`
+|Modification d'un avis
+
+|DELETE
+|`/api/reviews/{id}`
+|Suppression d'un avis
+|===
+
+==== Statistiques
+[cols="1,2,3"]
+|===
+|Méthode |Endpoint |Description
+
+|GET
+|`/api/statistics/dashboard`
+|Statistiques du tableau de bord utilisateur
+
+|GET
+|`/api/statistics/admin`
+|Statistiques administrateur (admin uniquement)
+|===
+
+=== Codes de réponse HTTP
+
+[cols="1,3"]
+|===
+|Code |Description
+
+|200
+|Succès - Requête traitée avec succès
+
+|201
+|Créé - Ressource créée avec succès
+
+|400
+|Requête incorrecte - Paramètres invalides
+
+|401
+|Non autorisé - Token JWT manquant ou invalide
+
+|403
+|Interdit - Accès refusé pour cette ressource
+
+|404
+|Non trouvé - Ressource inexistante
+
+|409
+|Conflit - Ressource déjà existante
+
+|500
+|Erreur serveur - Erreur interne du serveur
+|===
+
+=== Exemples de requêtes
+
+==== Connexion utilisateur
+[source,bash]
+----
+curl -X POST http://localhost:8080/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "motdepasse"
+  }'
+----
+
+==== Création d'un animal
+[source,bash]
+----
+curl -X POST http://localhost:8080/api/pets \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer {token}" \
+  -d '{
+    "name": "Rex",
+    "species": "chien",
+    "breed": "Golden Retriever",
+    "age": 3,
+    "description": "Chien très gentil et obéissant"
+  }'
+----
+
+==== Effectuer un swipe
+[source,bash]
+----
+curl -X POST http://localhost:8080/api/swipes \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer {token}" \
+  -d '{
+    "targetProfileId": 123,
+    "isLike": true
+  }'
+----
