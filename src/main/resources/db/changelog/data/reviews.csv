@@ -1,0 +1,15 @@
+review_id,booking_id,reviewer_id,reviewed_user_id,rating,comment,created_at
+1,6,550e8400-e29b-41d4-a716-446655440007,550e8400-e29b-41d4-a716-446655440002,5,"Marie a été parfaite avec Caramel ! Il était très content et détendu à mon retour. Je recommande vivement !",2025-08-24 18:00:00
+2,6,550e8400-e29b-41d4-a716-446655440002,550e8400-e29b-41d4-a716-446655440007,5,"Camille est une propriétaire très prévenante. Caramel est adorable et facile à garder. Merci pour la confiance !",2025-08-24 18:30:00
+3,1,550e8400-e29b-41d4-a716-446655440001,550e8400-e29b-41d4-a716-446655440002,5,"Marie a pris soin de Buddy comme si c'était son propre chien. Photos quotidiennes, longues balades. Parfait !",2025-08-28 16:00:00
+4,1,550e8400-e29b-41d4-a716-446655440002,550e8400-e29b-41d4-a716-446655440001,5,"John est un propriétaire fantastique ! Buddy est un amour, très bien éduqué. Organisation parfaite !",2025-08-28 16:15:00
+5,2,550e8400-e29b-41d4-a716-446655440001,550e8400-e29b-41d4-a716-446655440002,4,"Très bonne garde pour Whiskers. Il était un peu stressé les premiers jours mais Marie a su le rassurer.",2025-09-03 14:00:00
+6,2,550e8400-e29b-41d4-a716-446655440002,550e8400-e29b-41d4-a716-446655440001,5,"Whiskers est un chat merveilleux ! John donne d'excellents conseils. Chat très câlin une fois en confiance.",2025-09-03 14:20:00
+7,5,550e8400-e29b-41d4-a716-446655440005,550e8400-e29b-41d4-a716-446655440006,5,"Pierre a été exceptionnel avec Felix ! Chat très détendu, jardin bien surveillé. Merci beaucoup !",2025-08-30 12:00:00
+8,5,550e8400-e29b-41d4-a716-446655440006,550e8400-e29b-41d4-a716-446655440005,4,"Felix est un chat très indépendant comme annoncé. Sophie très organisée avec de bons conseils.",2025-08-30 12:30:00
+9,9,550e8400-e29b-41d4-a716-446655440010,550e8400-e29b-41d4-a716-446655440011,5,"Léa a été parfaite pour la première garde de Bella ! Très professionnelle et attentionnée.",2025-08-27 17:00:00
+10,9,550e8400-e29b-41d4-a716-446655440011,550e8400-e29b-41d4-a716-446655440010,5,"Thomas est un super propriétaire ! Bella est adorable et très bien éduquée. Parfait pour débuter !",2025-08-27 17:15:00
+11,10,550e8400-e29b-41d4-a716-446655440012,550e8400-e29b-41d4-a716-446655440002,5,"Marie a pris grand soin de Shadow. Photos régulières, médicaments donnés à l'heure. Excellent suivi !",2025-09-02 15:00:00
+12,10,550e8400-e29b-41d4-a716-446655440002,550e8400-e29b-41d4-a716-446655440012,5,"Maxime très prévenant pour Shadow. Chat senior adorable, très câlin. Instructions claires !",2025-09-02 15:30:00
+13,11,550e8400-e29b-41d4-a716-446655440003,550e8400-e29b-41d4-a716-446655440004,4,"Alex a bien géré Coco, même si elle a été un peu bruyante au début. Cage bien entretenue.",2025-08-25 10:00:00
+14,11,550e8400-e29b-41d4-a716-446655440004,550e8400-e29b-41d4-a716-446655440003,5,"Jane très sympa ! Coco est une perruche très intelligente et amusante. Bonne expérience !",2025-08-25 10:30:00

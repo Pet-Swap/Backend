@@ -1,0 +1,80 @@
+= PetSwap Backend Documentation
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:sectnums:
+
+== Introduction
+
+PetSwap Backend est une API REST développée avec Spring Boot pour une application d'échange de services de garde d'animaux.
+
+== Architecture
+
+L'application est construite avec :
+
+* Spring Boot 3.5.0
+* Java 21
+* PostgreSQL 17
+* Spring Security avec JWT
+* Liquibase pour la migration de base de données
+
+== Fonctionnalités principales
+
+=== Gestion des profils
+* Création et modification de profils utilisateur
+* Gestion des avatars (propriétaire, gardien, les deux)
+
+=== Gestion des animaux
+* Enregistrement des animaux de compagnie
+* Informations détaillées sur chaque animal
+
+=== Système de matching
+* Swipe pour trouver des gardiens/propriétaires
+* Système de matching basé sur la géolocalisation et les préférences
+
+=== Réservations
+* Création et gestion des réservations de garde
+* Suivi du statut des réservations
+
+=== Messagerie
+* Système de chat entre utilisateurs matchés
+* Notifications en temps réel
+
+=== Évaluations
+* Système d'évaluation après chaque garde
+* Gestion de la réputation des utilisateurs
+
+== Installation
+
+=== Prérequis
+* Java 21+
+* PostgreSQL 17+
+* Maven 3.6+
+
+=== Configuration
+1. Cloner le repository
+2. Configurer la base de données PostgreSQL
+3. Modifier `application.yaml` avec vos paramètres de base de données
+4. Exécuter `./mvnw spring-boot:run`
+
+== API Documentation
+
+L'API est documentée avec OpenAPI 3 et accessible via Swagger UI à l'adresse :
+`http://localhost:8080/swagger-ui.html`
+
+include::api/endpoints.adoc[]
+
+== Sécurité
+
+L'application utilise JWT (JSON Web Tokens) pour l'authentification avec Auth0.
+
+== Base de données
+
+La structure de base de données est gérée par Liquibase avec les changesets suivants :
+* Tables principales
+* Données de test
+* Séquences
+* Index et contraintes

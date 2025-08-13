@@ -1,0 +1,99 @@
+databaseChangeLog:
+  - changeSet:
+      id: load-profiles-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: profiles
+            file: db/changelog/data/profiles.csv
+            separator: ','
+            quotchar: '"'
+            relativeToChangelogFile: false
+            columns:
+              - column:
+                  name: user_id
+                  type: UUID
+              - column:
+                  name: username
+                  type: VARCHAR
+              - column:
+                  name: password
+                  type: VARCHAR
+              - column:
+                  name: avatar_url
+                  type: VARCHAR
+              - column:
+                  name: role
+                  type: VARCHAR
+              - column:
+                  name: bio
+                  type: VARCHAR
+              - column:
+                  name: rating
+                  type: NUMERIC
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+
+  - changeSet:
+      id: load-pets-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: pets
+            file: db/changelog/data/pets.csv
+            separator: ','
+
+  - changeSet:
+      id: load-listings-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: listings
+            file: db/changelog/data/listings.csv
+            separator: ','
+
+  - changeSet:
+      id: load-swipes-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: swipes
+            file: db/changelog/data/swipes.csv
+            separator: ','
+
+  - changeSet:
+      id: load-matches-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: matches
+            file: db/changelog/data/matches.csv
+            separator: ','
+
+  - changeSet:
+      id: load-messages-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: messages
+            file: db/changelog/data/messages.csv
+            separator: ','
+
+  - changeSet:
+      id: load-bookings-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: bookings
+            file: db/changelog/data/bookings.csv
+            separator: ','
+
+  - changeSet:
+      id: load-reviews-data
+      author: sylvain-costes
+      changes:
+        - loadData:
+            tableName: reviews
+            file: db/changelog/data/reviews.csv
+            separator: ','

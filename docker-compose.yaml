@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:17'
+    environment:
+      - 'POSTGRES_DB=petswap_db'
+      - 'POSTGRES_USER=user'
+      - 'POSTGRES_PASSWORD=secret'
+    ports:
+      - '5431:5432'

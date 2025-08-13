@@ -1,0 +1,26 @@
+logging:
+  level:
+    root: INFO
+    fr.petswap.backend: DEBUG
+    org.apache.hc.client5: DEBUG
+    liquibase: INFO
+    org.liquibase: INFO
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5431/petswap_db
+    username: user
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  liquibase:
+    enabled: true
+
+server:
+  port: 8089

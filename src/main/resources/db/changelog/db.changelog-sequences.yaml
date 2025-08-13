@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: update-sequences-after-data-load
+      author: sylvain-costes
+      changes:
+        - sql:
+            sql: |
+              -- Mettre à jour la séquence des swipes
+              SELECT setval('swipes_swipe_id_seq', (SELECT MAX(swipe_id) FROM swipes));
+              
+              -- Mettre à jour la séquence des matches
+              SELECT setval('matches_match_id_seq', (SELECT MAX(match_id) FROM matches));
+              
+              -- Mettre à jour la séquence des messages
+              SELECT setval('messages_message_id_seq', (SELECT MAX(message_id) FROM messages));
+              
+              -- Mettre à jour la séquence des bookings
+              SELECT setval('bookings_booking_id_seq', (SELECT MAX(booking_id) FROM bookings));
+              
+              -- Mettre à jour la séquence des reviews
+              SELECT setval('reviews_review_id_seq', (SELECT MAX(review_id) FROM reviews));
+              
+              -- Mettre à jour la séquence des listings
+              SELECT setval('listings_listing_id_seq', (SELECT MAX(listing_id) FROM listings));
+              
+              -- Mettre à jour la séquence des pets
+              SELECT setval('pets_pet_id_seq', (SELECT MAX(pet_id) FROM pets));
+

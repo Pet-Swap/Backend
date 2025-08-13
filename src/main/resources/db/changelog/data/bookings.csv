@@ -1,0 +1,17 @@
+booking_id,match_id,start_date,end_date,total_price,status,created_at,is_rebooking,original_booking_id,special_requests
+1,1,2025-08-20,2025-08-27,200.00,CONFIRMED,2025-08-12 20:00:00,false,,"Buddy adore jouer au frisbee et nager. Clés cachées sous le pot de fleurs."
+2,4,2025-08-25,2025-09-02,120.00,CONFIRMED,2025-08-13 14:00:00,false,,"Whiskers dort beaucoup, ne pas s'inquiéter. Litière à changer tous les 2 jours."
+3,6,2025-08-18,2025-08-25,140.00,PENDING,2025-08-13 18:00:00,false,,"Minou mange à heures fixes : 7h et 19h. Brossage avant le coucher."
+4,7,2025-08-18,2025-08-25,140.00,CANCELLED,2025-08-13 18:30:00,false,,"Demande annulée - pet-sitter pas disponible finalement."
+5,8,2025-08-22,2025-08-29,84.00,CONFIRMED,2025-08-13 19:00:00,false,,"Felix sort dans le jardin le matin. Bien refermer la porte-fenêtre."
+6,10,2025-08-16,2025-08-23,70.00,COMPLETED,2025-08-14 14:00:00,false,,"Caramel mange foin + légumes frais (carottes, endives). Très gentil !"
+7,11,2025-08-30,2025-09-07,240.00,CONFIRMED,2025-08-14 17:00:00,false,,"Rex connaît les commandes de base. Laisse longue pour les baignades."
+8,13,2025-08-21,2025-08-28,196.00,PENDING,2025-08-15 20:00:00,false,,"Max sait : assis, couché, donne la patte, tourne, recule. Stimulation mentale importante !"
+9,15,2025-08-19,2025-08-26,154.00,CONFIRMED,2025-08-15 22:00:00,false,,"Bella est parfaite pour débuter. Très obéissante, rappel au sifflet."
+10,17,2025-08-24,2025-09-01,144.00,CONFIRMED,2025-08-16 14:00:00,false,,"Shadow : médicament dans croquettes à 18h. Adore les câlins sur le canapé."
+11,19,2025-08-17,2025-08-24,56.00,CONFIRMED,2025-08-16 17:30:00,false,,"Coco adore Mozart et Beethoven ! Graines dans le tiroir du meuble."
+12,21,2025-08-20,2025-08-30,50.00,PENDING,2025-08-17 13:00:00,false,,"Nemo : 2-3 paillettes de nourriture 1x/jour. Changer l'eau si elle devient trouble."
+13,22,2025-08-26,2025-09-03,128.00,PENDING,2025-08-17 19:30:00,false,,"Luna ADORE les plumes et balles. Attention plantes vertes ! Cache-les svp."
+14,11,2025-09-15,2025-09-22,210.00,CONFIRMED,2025-08-18 10:00:00,true,7,"Rex - Rebooking ! Mêmes consignes, il vous connaît maintenant 😊"
+15,17,2025-09-10,2025-09-17,126.00,PENDING,2025-08-18 15:00:00,true,10,"Shadow - Deuxième garde. Nouveau médicament : comprimé blanc le matin aussi."
+

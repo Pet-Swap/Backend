@@ -1,0 +1,25 @@
+message_id,match_id,sender_id,content,sent_at
+1,1,550e8400-e29b-41d4-a716-446655440001,"Bonjour Marie ! J'ai vu votre profil et vous semblez parfaite pour garder Buddy. Êtes-vous disponible du 20 au 27 août ?",2025-08-12 19:00:00
+2,1,550e8400-e29b-41d4-a716-446655440002,"Bonjour John ! Oui je suis totalement disponible ces dates. Buddy a l'air adorable ! Pouvez-vous me parler de ses habitudes ?",2025-08-12 19:15:00
+3,1,550e8400-e29b-41d4-a716-446655440001,"Buddy adore les promenades, il faut le sortir 2 fois par jour minimum. Il mange à 7h et 18h. Très sociable avec les autres chiens !",2025-08-12 19:30:00
+4,1,550e8400-e29b-41d4-a716-446655440002,"Parfait ! J'ai l'habitude des goldens. J'habite près d'un parc, il pourra bien se défouler. Vous préférez garde à domicile ou chez moi ?",2025-08-12 19:45:00
+5,4,550e8400-e29b-41d4-a716-446655440001,"Bonjour Marie ! Intéressée par la garde de Whiskers ? Il est très câlin mais plus tranquille que Buddy 😊",2025-08-13 13:00:00
+6,4,550e8400-e29b-41d4-a716-446655440002,"Bonjour ! Oui bien sûr, j'adore les chats aussi. Whiskers a-t-il des habitudes particulières ?",2025-08-13 13:20:00
+7,6,550e8400-e29b-41d4-a716-446655440005,"Bonjour Marie ! Merci d'avoir liké l'annonce pour Minou. Il est un peu capricieux mais très attachant.",2025-08-13 17:00:00
+8,6,550e8400-e29b-41d4-a716-446655440002,"Bonjour Sophie ! J'ai de l'expérience avec les persans. Le brossage quotidien ne me dérange pas du tout !",2025-08-13 17:15:00
+9,10,550e8400-e29b-41d4-a716-446655440007,"Salut Marie ! Caramel est vraiment facile à garder. C'est votre première expérience avec les lapins ?",2025-08-14 13:00:00
+10,10,550e8400-e29b-41d4-a716-446655440002,"Salut Camille ! Non j'ai déjà gardé des lapins, ils sont adorables. Caramel mange quoi exactement ?",2025-08-14 13:15:00
+11,11,550e8400-e29b-41d4-a716-446655440008,"Bonjour Pierre ! Rex a besoin de beaucoup d'exercice, ça vous convient ?",2025-08-14 16:00:00
+12,11,550e8400-e29b-41d4-a716-446655440006,"Bonjour Lucas ! Parfait, je suis retraité et j'adore les longues balades. Rex pourra même aller nager si vous voulez !",2025-08-14 16:20:00
+13,13,550e8400-e29b-41d4-a716-446655440010,"Bonjour Marie ! Max est très intelligent, il va vous donner du fil à retordre 😄",2025-08-15 19:30:00
+14,13,550e8400-e29b-41d4-a716-446655440002,"J'adore les défis ! Quels tours connaît-il ?",2025-08-15 19:45:00
+15,15,550e8400-e29b-41d4-a716-446655440010,"Bonjour Léa ! Bella serait parfaite pour vous, elle est très obéissante.",2025-08-15 21:00:00
+16,15,550e8400-e29b-41d4-a716-446655440011,"Bonjour Thomas ! C'est exactement ce qu'il me faut pour commencer. Bella est-elle vaccinée ?",2025-08-15 21:15:00
+17,17,550e8400-e29b-41d4-a716-446655440012,"Bonjour Marie ! Shadow est très calme, juste besoin de compagnie et de son médicament quotidien.",2025-08-16 13:30:00
+18,17,550e8400-e29b-41d4-a716-446655440002,"Pas de problème pour le médicament ! À quelle heure préfère-t-il le prendre ?",2025-08-16 13:45:00
+19,19,550e8400-e29b-41d4-a716-446655440003,"Salut Alex ! Coco va vous faire rire avec son bavardage 😂",2025-08-16 17:00:00
+20,19,550e8400-e29b-41d4-a716-446655440004,"Haha j'ai hâte ! Elle aime quel genre de musique ?",2025-08-16 17:15:00
+21,21,550e8400-e29b-41d4-a716-446655440001,"Bonjour Pierre ! Nemo est parfait pour débuter, très facile !",2025-08-17 12:30:00
+22,21,550e8400-e29b-41d4-a716-446655440006,"Merci John ! C'est effectivement mon premier pet-sitting. Nemo mange quoi exactement ?",2025-08-17 12:45:00
+23,22,550e8400-e29b-41d4-a716-446655440005,"Bonjour Marie ! Luna est très énergique, j'espère que ça ne vous dérange pas ?",2025-08-17 19:00:00
+24,22,550e8400-e29b-41d4-a716-446655440002,"Pas du tout Sophie ! J'adore jouer avec les chats. Elle a des jouets préférés ?",2025-08-17 19:15:00
