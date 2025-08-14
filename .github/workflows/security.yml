@@ -1,7 +1,6 @@
 name: Security Scan
 
 on:
-
   pull_request:
     branches: [ develop, main ]
   schedule:
@@ -26,25 +25,39 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Run OWASP Dependency Check
-      run: |
-        ./mvnw org.owasp:dependency-check-maven:check
+    # Snyk Security Scan
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/maven@master
       continue-on-error: true
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        args: --severity-threshold=high --file=pom.xml
 
-    - name: Upload OWASP Dependency Check results
+    - name: Upload Snyk results to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: snyk.sarif
+
+    - name: Upload Snyk report
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: owasp-dependency-check-report
-        path: target/dependency-check-report.html
+        name: snyk-vulnerability-report
+        path: snyk.sarif
 
+    # CodeQL seulement sur le scan programmé (pas sur les PR)
     - name: Initialize CodeQL
+      if: github.event_name == 'schedule'
       uses: github/codeql-action/init@v3
       with:
         languages: java
 
     - name: Build for CodeQL
+      if: github.event_name == 'schedule'
       run: ./mvnw clean compile -DskipTests
 
     - name: Perform CodeQL Analysis
+      if: github.event_name == 'schedule'
       uses: github/codeql-action/analyze@v3
