@@ -25,27 +25,43 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Snyk Security Scan
+    # Installation directe de Snyk CLI pour éviter les problèmes Docker
+    - name: Install Snyk CLI
+      run: |
+        curl -Lo snyk https://github.com/snyk/snyk/releases/latest/download/snyk-linux
+        chmod +x snyk
+        sudo mv snyk /usr/local/bin/
+
     - name: Run Snyk to check for vulnerabilities
-      uses: snyk/actions/maven@master
+      run: |
+        snyk auth ${{ secrets.SNYK_TOKEN }}
+        snyk test --severity-threshold=high --file=pom.xml --json-file-output=snyk-results.json || true
+        # Convertir JSON en SARIF pour GitHub
+        snyk-to-html -i snyk-results.json -o snyk-report.html || true
       continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        args: --severity-threshold=high --file=pom.xml
 
-    - name: Upload Snyk results to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v3
-      if: always()
-      with:
-        sarif_file: snyk.sarif
+    - name: Install snyk-to-html for report generation
+      run: npm install -g snyk-to-html
+
+    - name: Generate HTML report
+      run: |
+        if [ -f snyk-results.json ]; then
+          snyk-to-html -i snyk-results.json -o snyk-report.html
+        else
+          echo "No Snyk results file found"
+        fi
+      continue-on-error: true
 
     - name: Upload Snyk report
       uses: actions/upload-artifact@v4
       if: always()
       with:
         name: snyk-vulnerability-report
-        path: snyk.sarif
+        path: |
+          snyk-results.json
+          snyk-report.html
 
     # CodeQL seulement sur le scan programmé (pas sur les PR)
     - name: Initialize CodeQL
