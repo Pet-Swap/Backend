@@ -1,11 +1,9 @@
 # PetSwap Backend 🐾
 
-[![CI - Build and Test](https://github.com/Pet-Swap/Backend/actions/workflows/ci.yml/badge.svg)](https://github.com/Pet-Swap/Backend/actions/workflows/ci.yml)
-[![Code Quality](https://github.com/Pet-Swap/Backend/actions/workflows/code-quality.yml/badge.svg)](https://github.com/Pet-Swap/Backend/actions/workflows/code-quality.yml)
-[![Docker Build and Push](https://github.com/Pet-Swap/Backend/actions/workflows/docker.yml/badge.svg)](https://github.com/Pet-Swap/Backend/actions/workflows/docker.yml)
-[![Deploy to Staging](https://github.com/Pet-Swap/Backend/actions/workflows/deploy.yml/badge.svg)](https://github.com/Pet-Swap/Backend/actions/workflows/deploy.yml)
-[![Documentation](https://github.com/Pet-Swap/Backend/actions/workflows/documentation.yml/badge.svg)](https://github.com/Pet-Swap/Backend/actions/workflows/documentation.yml)
-[![Security Scan](https://github.com/Pet-Swap/Backend/actions/workflows/security.yml/badge.svg)](https://github.com/Pet-Swap/Backend/actions/workflows/security.yml)
+[![CI - Build and Test](https://github.com/Pet-Swap/Backend/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/Pet-Swap/Backend/actions/workflows/ci.yml)
+[![Code Quality](https://github.com/Pet-Swap/Backend/actions/workflows/code-quality.yml/badge.svg?branch=develop)](https://github.com/Pet-Swap/Backend/actions/workflows/code-quality.yml)
+[![Documentation](https://github.com/Pet-Swap/Backend/actions/workflows/documentation.yml/badge.svg?branch=develop)](https://github.com/Pet-Swap/Backend/actions/workflows/documentation.yml)
+[![Security Scan](https://github.com/Pet-Swap/Backend/actions/workflows/security.yml/badge.svg?branch=develop)](https://github.com/Pet-Swap/Backend/actions/workflows/security.yml)
 
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-brightgreen.svg)](https://spring.io/projects/spring-boot)

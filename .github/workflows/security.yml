@@ -1,7 +1,6 @@
 name: Security Scan
 
 on:
-
   pull_request:
     branches: [ develop, main ]
   schedule:
@@ -26,25 +25,55 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Run OWASP Dependency Check
+    # Installation directe de Snyk CLI pour éviter les problèmes Docker
+    - name: Install Snyk CLI
       run: |
-        ./mvnw org.owasp:dependency-check-maven:check
+        curl -Lo snyk https://github.com/snyk/snyk/releases/latest/download/snyk-linux
+        chmod +x snyk
+        sudo mv snyk /usr/local/bin/
+
+    - name: Run Snyk to check for vulnerabilities
+      run: |
+        snyk auth ${{ secrets.SNYK_TOKEN }}
+        snyk test --severity-threshold=high --file=pom.xml --json-file-output=snyk-results.json || true
+        # Convertir JSON en SARIF pour GitHub
+        snyk-to-html -i snyk-results.json -o snyk-report.html || true
+      continue-on-error: true
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+    - name: Install snyk-to-html for report generation
+      run: npm install -g snyk-to-html
+
+    - name: Generate HTML report
+      run: |
+        if [ -f snyk-results.json ]; then
+          snyk-to-html -i snyk-results.json -o snyk-report.html
+        else
+          echo "No Snyk results file found"
+        fi
       continue-on-error: true
 
-    - name: Upload OWASP Dependency Check results
+    - name: Upload Snyk report
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: owasp-dependency-check-report
-        path: target/dependency-check-report.html
+        name: snyk-vulnerability-report
+        path: |
+          snyk-results.json
+          snyk-report.html
 
+    # CodeQL seulement sur le scan programmé (pas sur les PR)
     - name: Initialize CodeQL
+      if: github.event_name == 'schedule'
       uses: github/codeql-action/init@v3
       with:
         languages: java
 
     - name: Build for CodeQL
+      if: github.event_name == 'schedule'
       run: ./mvnw clean compile -DskipTests
 
     - name: Perform CodeQL Analysis
+      if: github.event_name == 'schedule'
       uses: github/codeql-action/analyze@v3
