@@ -35,15 +35,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Run tests
-      run: ./mvnw test
+    - name: Build and test application
+      run: ./mvnw clean test compile
       env:
         # Variables d'environnement pour les tests d'intégration uniquement si nécessaire
         # Les tests unitaires utiliseront H2 via application-test.yaml
         SPRING_PROFILES_ACTIVE: test
-
-    - name: Build application
-      run: ./mvnw clean compile
 
     - name: Generate documentation
       run: ./mvnw asciidoctor:process-asciidoc
