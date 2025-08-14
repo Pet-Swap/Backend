@@ -1,10 +1,8 @@
 name: Documentation
 
 on:
-  push:
-    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   build-docs:
@@ -26,14 +24,7 @@ jobs:
 
     - name: Upload documentation
       uses: actions/upload-artifact@v4
+      if: always()
       with:
-        name: asciidoc-documentation
+        name: documentation
         path: target/generated-docs/
-
-    - name: Deploy documentation to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: target/generated-docs
-        destination_dir: docs
