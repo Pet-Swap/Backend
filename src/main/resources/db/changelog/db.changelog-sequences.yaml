@@ -25,4 +25,3 @@ databaseChangeLog:
               
               -- Mettre à jour la séquence des pets
               SELECT setval('pets_pet_id_seq', (SELECT MAX(pet_id) FROM pets));
-

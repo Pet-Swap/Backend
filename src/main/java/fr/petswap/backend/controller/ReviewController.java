@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,7 +23,7 @@ public class ReviewController {
 
     @PostMapping
     public ResponseEntity<ReviewDto> createReview(
-            @RequestBody CreateReviewRequest request,
+            @Valid @RequestBody CreateReviewRequest request,
             Authentication authentication) {
         Profile currentUser = (Profile) authentication.getPrincipal();
         ReviewDto review = reviewService.createReview(currentUser.getId(), request);
